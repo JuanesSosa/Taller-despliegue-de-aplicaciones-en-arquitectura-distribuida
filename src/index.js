@@ -10,7 +10,7 @@ app.use(express.json());
 app.post("/products", (req, res) => productController.create(req, res));
 app.get("/products", (req, res) => productController.getAll(req, res));
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 async function start() {
   await connectMongo();
